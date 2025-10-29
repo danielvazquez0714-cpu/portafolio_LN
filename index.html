@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguaje Natural con Python</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Portada */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .hero-info {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .hero-info p {
+            margin: 0.5rem 0;
+        }
+
+        .author {
+            font-weight: 400;
+            margin-top: 1rem;
+        }
+
+        /* Catálogo */
+        .catalog {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .catalog h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: #dc2626;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            font-size: 4rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .catalog {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Portada -->
+    <section class="hero">
+        <h1>Lenguaje Natural con Python</h1>
+        <div class="hero-info">
+            <p class="author">Realizado por: <strong>Carlos Daniel Vázquez Pérez</strong></p>
+            <p>Especialidad en Inteligencia Artificial</p>
+            <p>CBTis 144</p>
+        </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section class="catalog">
+        <h2>Temas del Proyecto</h2>
+        <div class="cards-container">
+            <!-- Card 1: Análisis de Sentimientos -->
+            <div class="card">
+                <div class="card-image">😊</div>
+                <div class="card-content">
+                    <h3>Análisis de Sentimientos</h3>
+                    <p>Clasificación de emociones y opiniones en texto</p>
+                    <a href="analisis_sentimientos_rojo.html">link</a>
+                </div>
+            </div>
+
+            <!-- Card 2: For -->
+            <div class="card">
+                <div class="card-image">🔄</div>
+                <div class="card-content">
+                    <h3>Estructuras For</h3>
+                    <p>Iteración y procesamiento de datos textuales</p>
+                    <a href="for.html">link</a>
+                </div>
+            </div>
+
+            <!-- Card 3: Frecuencia -->
+            <div class="card">
+                <div class="card-image">📊</div>
+                <div class="card-content">
+                    <h3>Frecuencia de Palabras</h3>
+                    <p>Análisis estadístico de términos en corpus</p>
+                    <a href="frecuencias.html">link</a>
+                </div>
+            </div>
+
+            <!-- Card 4: Longitud -->
+            <div class="card">
+                <div class="card-image">📏</div>
+                <div class="card-content">
+                    <h3>Longitud de Texto</h3>
+                    <p>Medición y análisis de extensión textual</p>
+                    <a href="longuitud.html">link</a>
+                </div>
+            </div>
+
+            <!-- Card 5: Tokens -->
+            <div class="card">
+                <div class="card-image">🔤</div>
+                <div class="card-content">
+                    <h3>Tokenización</h3>
+                    <p>Segmentación de texto en unidades básicas</p>
+                    <a href="tokens.html">link</a>
+                </div>
+            </div>
+
+            <!-- Card 6: Tokens -->
+            <div class="card">
+                <div class="card-image">💬</div>
+                <div class="card-content">
+                    <h3>Pre proceamiento</h3>
+                    <p>Libreria de procesamiento.</p>
+                    <a href="procesamiento.html">link</a>
+                </div>
+            </div>
+
+            <!-- Card 7: Tokens -->
+            <div class="card">
+                <div class="card-image">🌐</div>
+                <div class="card-content">
+                    <h3>Traductor</h3>
+                    <p>Traductor que traduce en 4 idioma diferente.</p>
+                    <a href="Traductor.html">link</a>
+                </div>
+            </div>
+
+            <!-- Card 8: Tokens -->
+            <div class="card">
+                <div class="card-image">📄</div>
+                <div class="card-content">
+                    <h3>Idiomas</h3>
+                    <p>Traductor que traduce en 5 idioma diferente.</p>
+                    <a href="idiomas.html">link</a>
+                </div>
+            </div>
+
+            <!-- Card 9: Tokens -->
+            <div class="card">
+                <div class="card-image">📄</div>
+                <div class="card-content">
+                    <h3>Libreria textblob</h3>
+                    <p>Traductor que traduce en 5 idioma diferente.</p>
+                    <a href="Libreria.html">link</a>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
