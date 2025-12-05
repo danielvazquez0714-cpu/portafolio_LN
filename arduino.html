@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema con Código y Glosario</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content-wrapper {
+            background: #f5f5f5;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .tema-titulo {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tema-titulo h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .tema-titulo p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .section h3 {
+            color: #dc2626;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #dc2626;
+        }
+
+        .code-container {
+            background: #2d3748;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        .code-container pre {
+            margin: 0;
+            color: #e2e8f0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .code-container code {
+            display: block;
+        }
+
+        .keyword { color: #ff79c6; }
+        .function { color: #50fa7b; }
+        .string { color: #f1fa8c; }
+        .comment { color: #6272a4; }
+        .number { color: #bd93f9; }
+
+        .glosario-item {
+            background: #f7fafc;
+            border-left: 4px solid #dc2626;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glosario-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .glosario-item h4 {
+            color: #dc2626;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .glosario-item p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .parametros {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .parametros strong {
+            color: #dc2626;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .parametros code {
+            background: #2d3748;
+            color: #50fa7b;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .tema-titulo h2 {
+                font-size: 1.5em;
+            }
+
+            .section h3 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Realizado por: Jordy Chirino Balcazar</h1>
+            <p>Especialidad de IA del CBTIS 144</p>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="tema-titulo">
+                <h2>Tema 12: componentes de arduino</h2>
+            </div>
+
+            <div class="section">
+                <h3>📝 Código del Ejemplo</h3>
+                <div class="code-container">
+                    <pre># crear un chatbot, que nos ayude a aprender
+# sobre los componentes de arduino,
+# en una lista cargar todos los componentes
+# en listados en roborealm, y el preguntar
+# al chat bot que componente desea aprender y
+# este te debe contestar el concepto del
+# componente seleccionado. Si al escribir
+# el componente lo escribe mal, el chat bot
+# te debe de indicar que no entiende lo que escribiste
+# y pedirte que escribas correctamente el componente
+# VALOR DE LA PRACTICA 5 FIRMAS
+
+componentes = ["protoboard", "protoboard de expansion", "modulo lcd", "sensor ultrasonico",
+               "sesor de temperatura y humedad", "arduino nano", "modulo de joystick",
+               "controlador de motor paso a paso", "motor paso a paso", "servomotor", "motor de 3 a 6 voltios",
+               "aspa de ventilador", "modulo de rele de 5v", "potenciometro", "buzzer pasivo", "buzzer activo",
+               "botones", "pantalla de 4 digitos y 7 segmentos", "pantalla de 1 digito y 7 segmentos",
+               "interruptores de menbrana", "control remoto", "registro de turnos 74hc595", "fotoresistencia",
+               "cables tipo dupont", "cable usb", "clip de bateria con conector", "resistor", "led rgb", "leds",
+               "circuito integrado l293d", "sensor de inclinacion", "transistor pn2222", "diodo 1n4007", "termistor",
+               "cable jumper", "adaptador de poder"]
+
+saludo = input()
+if saludo == "hola":
+
+    print("Menu de componentes:")
+    print(" 1. protoboard \n", "2. protoboard de expansion\n", "3. modulo lcd\n", "4. sensor ultrasonico\n",
+          "5. sesor de temperatura y humedad\n", "6. arduino nano\n", "7. modulo de joystick\n",
+          "8. controlador de motor paso a paso\n", "9. motor paso a paso\n", "10. servomotor\n", "11. motor de 3 a 6 voltios\n",
+          "12. aspa de ventilador\n", "13. modulo de rele de 5v\n", "14. potenciometro\n", "15. buzzer pasivo\n","16. buzzer activo\n",
+          "16. botones\n", "17. pantalla de 4 digitos y 7 segmentos\n","18. pantalla de 1 digito y 7 segmentos\n", "19. interruptores de menbrana\n",
+          "20. control remoto\n", "21. registro de turnos 74hc595\n", "22. fotoresistencia\n", "23. cables tipo dupont\n",
+          "24. cable usb\n", "25. clip de bateria con conector\n", "26. resistor\n", "27. led rgb\n", "28. leds\n", "29. circuito integrado l293d\n",
+          "30. sensor de inclinacion\n", "31. transistor pn2222\n", "32. diodo 1n4007\n", "33. termistor\n", "34. cable jumper\n", "35. adaptador de poder\n", "36. salir")
+
+    def menu():
+        opcion = input("Chat bot: ¿Qué componente de urdaino quieres informacion?").lower().strip()
+        if opcion == "protoboard":
+            print(
+                "Es una placa de pruebas en los que se pueden insertar elementos electrónicos y cables con los que se arman circuitos sin la necesidad de soldar ninguno de los componentes.")
+            menu()
+        elif opcion == "protoboard de expansion":
+            print(
+                "Permite facilitar el uso entre la plataforma Arduino y cualquier otro hardware. Se puede decir que este módulo se encarga de expandir la funcionalidad de cualquier plataforma Arduino, generando un mayor orden en la circuitería.")
+            menu()
+        elif opcion == "modulo lcd":
+            print(
+                "Se utiliza para mostrar información en proyectos de Arduino. Los LCD Arduino son populares debido a su facilidad de uso y bajo costo.")
+            menu()
+        elif opcion == "sensor ultrasonico":
+            print(
+                "Es un transductor que mide la distancia de un objeto por medio del rebote de una onda sonora que trabaja en el rango de los ultrasonidos por eso no lo podemos escuchar. Es importante mencionar que este tipo de sensor no funciona en un lugar donde no haya aire ya que por medio de este se transporta la onda sonora.")
+            menu()
+        elif opcion == "sensor de temperatura y humedad":
+            print(
+                "Es un termistor para medir el aire circundante, y muestra los datos mediante una señal digital en el pin de datos (no posee salida analógica). Es bastante simple de usar tanto en hardware como software.")
+            menu()
+        elif opcion == "arduino nano":
+            print(
+                "El Arduino Nano es una placa pequeña que facilita la creación rápida de prototipos en una protoboard. Es diseñada para encajar perfectamente en una breadboard y tiene un puerto USB integrado. Viene con un conector mini USB, un chip ATMega328, y dos entradas analógicas adicionales en comparación con otras placas Arduino como la Diecimila. También tiene un conector ICSP para programarlo con un programador externo si es necesario, sin tener que hacer conexiones de cables externos.")
+            menu()
+        elif opcion == "modulo de joystick":
+            print(
+                "Permite controlar y manejar determinados aparatos electrónicos. Normalmente se utilizan para proyectos robóticos en el cual se necesitan para la movilidad analógica de las articulaciones de un brazo robótico.")
+            menu()
+        elif opcion == "controlador de motor paso a paso":
+            print(
+                "Se encarga de enviar las señales adecuadas al motor para que se mueva en incrementos discretos, conocidos como pasos. Estos pasos pueden ser muy pequeños, lo que permite un control preciso del movimiento del motor.")
+            menu()
+        elif opcion == "motor paso a paso":
+            print(
+                "Un motor paso a paso es un aparato que transforma señales eléctricas en movimientos mecánicos discretos. Básicamente, su eje gira en pasos o saltos cada vez que recibe pulsos eléctricos adecuados. Cada paso representa una rotación en un ángulo específico determinado por el fabricante del motor.")
+            menu()
+        elif opcion == "servomotor":
+            print(
+                "Permite mantener una posición que indiquemos, siempre que esté dentro del rango de operación del propio dispositivo. Por otro lado, nos permite controlar la velocidad de giro, podemos hacer que antes de que se mueva a la siguiente posición espere un tiempo.")
+            menu()
+        elif opcion == "motor de 3 a 6 voltios":
+            print(
+                "Se utiliza específicamente para proporcionar energía mecánica en una variedad de dispositivos y proyectos.")
+            menu()
+        elif opcion == "aspa de ventilador":
+            print(
+                "Sirve para mover el aire y crear corrientes de aire dentro de un espacio lo que ayuda a refrescar el ambiente.")
+            menu()
+        elif opcion == "modulo de rele de 5v":
+            print(
+                "Un relé es un interruptor mecánico operado eléctricamente que se puede encender o apagar, dejando pasar la corriente o no, y se puede controlar con voltajes bajos, como los 5V utilizados en la alimentación de un Arduino.")
+            menu()
+        elif opcion == "potenciometro":
+            print(
+                "Sirve para limitar el flujo de corriente eléctrica de manera variable. Provocando una caída de tensión en relación a la resistividad. Básicamente es una resistencia variable.")
+            menu()
+        elif opcion == "buzzer pasivo":
+            print(
+                "Un buzzer pasivo o un altavoz son dispositivos que convierten una señal eléctrica en sonido. No tienen componentes electrónicos internos, así que necesitamos proporcionarles una señal eléctrica para producir el sonido que queremos.")
+            menu()
+        elif opcion == "buzzer activo":
+            print(
+                "El zumbador pasivo es capaz de emitir cualquier frecuencia (inferior 2KHz) que le proporcionemos. Podemos generar fácilmente esta señal desde Arduino con la funcion tone.")
+            menu()
+        elif opcion == "botones":
+            print(
+                "Utilizado como switch o interruptor al momento de ser presionado. Funciona como contacto normalmente abierto.")
+            menu()
+        elif opcion == "pantalla de 4 dígitos y 7 segmentos":
+            print(
+                "El Display básico de 4 dígitos con 7 segmentos, es un pequeño módulo capaz de mostrar hasta 4 números y tiene puntos digitales en cada dígito. Es una forma de representar números en equipos electrónicos. Está compuesto de 7 segmentos que se pueden encender o apagar individualmente.")
+            menu()
+        elif opcion == "pantalla de 1 dígito y 7 segmentos":
+            print("Start Bootstrap has been the leader in free Bootstrap templates since 2013!")
+            menu()
+        elif opcion == "interruptores de membrana":
+            print(
+                "Se utiliza para representar números. Como su propio nombre indica y, como se puede observar en la imagen, el display está compuesto por 7 segmentos, los cuales se encenderán y/o apagarán en función del número a representar.")
+            menu()
+        elif opcion == "control remoto":
+            print(
+                "La señal enviada por el control remoto corresponde a un tren de pulsos infrarrojos cada vez que se presiona una tecla. Los pulsos forman un patrón que es único para cada tecla del control, así el dispositivo receptor reconoce dicho patrón y responde a él. Sin embargo, estos trenes de pulsos se envían de forma modulada a través de una onda portadora con el fin de evitar ruido e interferencias.")
+            menu()
+        elif opcion == "registro de turnos 74hc595":
+            print(
+                "Es un dispositivo que combina un pestillo tipo D con un registro de turnos dentro de un chip. Recibe datos en serie y luego los envía a través de varios pines en paralelo. Además de las salidas en paralelo, también ofrece una salida en serie.")
+            menu()
+        elif opcion == "fotoresistencia":
+            print(
+                "Es una resistencia que varía en función de la luz que incide sobre su superficie, cuanto mayor sea la intensidad de la luz que incide en la superficie del LDR menor será su resistencia y cuanta menos luz incida mayor será su resistencia.")
+            menu()
+        elif opcion == "cable tipo dupont":
+            print(
+                "Es un cable con un conector en cada extremo, típicamente usado para conectar componentes entre sí en una placa de pruebas. Se usan para transferir señales eléctricas de un lugar a otro en la placa de prototipos.")
+            menu()
+        elif opcion == "cable usb":
+            print(
+                "Permite conectar tu tarjeta de desarrollo a la computadora para descargar programas y/o realizar la comunicación serial.")
+            menu()
+        elif opcion == "clip de bateria con conector":
+            print(
+                "El conector para batería Arduino permite conectar directamente una batería de 9 volts (cuadrada) a la toma de alimentación (jack) de una tarjeta Arduino. Es una forma práctica de alimentar tus circuitos para pruebas, donde un puerto USB o una toma eléctrica no estará disponible, por ejemplo, mientras le enseñas al profesor tus circuitos o mientras realizas pruebas con un módulo de radio frecuencia.")
+            menu()
+        elif opcion == "resistor":
+            print(
+                "Se denomina resistencia o resistor al componente electrónico diseñado para introducir una resistencia eléctrica determinada entre dos puntos de un circuito eléctrico.")
+            menu()
+        elif opcion == "led rgb":
+            print(
+                "El sensor es capaz de emitir luz de color por medio de la mezcla de los colores del sistema RGB (rojo, verde y azul), cuenta con tres resistencias de 330Ω en su PCB para evitar que se dañe el dispositivo.")
+            menu()
+        elif opcion == "leds":
+            print(
+                "Se trata de un sensor que actúa como una resistencia variable en función de la luz que capta. A mayor intensidad de luz, menor resistencia: el sensor ofrece una resistencia de 1M ohm en la oscuridad, alrededor de 10k ohm en exposición de luz ambiente, hasta menos de 1k ohm expuesto a la luz del sol.")
+            menu()
+        elif opcion == "circuito integrado l293d":
+            print(
+                "Este circuito está diseñado para proveer corriente de control bidireccional para motores a pasos y de DC. Puede controlar motores de 4.5V hasta los 36V con una corriente pico máxima de 1A. Todas las entradas son compatibles con lógica TTL por lo que lo puedes utilizar con cualquier tarjeta de desarrollo o microcontrolador.")
+            menu()
+        elif opcion == "sensor de inclinacion":
+            print(
+                "Un sensor de inclinación es un dispositivo que proporciona una señal digital en caso de que su inclinación supere un umbral. Este tipo de sensor no permite saber el grado de inclinación del dispositivo, simplemente actúa como un sensor que se cierra a partir de una cierta inclinación.")
+            menu()
+        elif opcion == "transistor pn2222":
+            print(
+                "El transistor PN2222 de pequeña señal diseñado para su uso como amplificador de propósito general NPN de potencia media de uso general y adecuados para muchas aplicaciones diferentes.")
+            menu()
+        elif opcion == "diodo 1n4007":
+            print(
+                "El Diodo Rectificador 1N4007 consiste en permitir el flujo de energía eléctrica en un solo sentido, por lo cual se comporta de dos maneras: Polarización directa: permitiendo el paso de la corriente eléctrica. Polarización inversa: impidiendo el paso de la corriente eléctrica.")
+            menu()
+        elif opcion == "termistor":
+            print(
+                "Es un sensor de temperatura resistivo, el cual al cambiar su temperatura, varía su resistencia eléctrica. Podemos aprovechar este efecto para realizar mediciones de temperatura utilizando un divisor resistivo y las entradas analógicas de nuestra placa Arduino.")
+            menu()
+        elif opcion == "cable jumper":
+            print(
+                "La función del cable Jumper es con frecuencia usado en el tablero protoboard haciendo posible la conexión de dos elementos ingresados en dicho tablero. Se conoce como macho-macho debido al fragmento que sobresale de los extremos del cable.")
+            menu()
+        elif opcion == "adaptador de poder":
+            print(
+                "Transforma la corriente de una fuente de alimentación en una corriente adecuada para el funcionamiento de Arduino. Este transforma la corriente alterna de la toma de corriente en una corriente continua que puede ser utilizada por Arduino.")
+            menu()
+        elif opcion == "salir":
+            exit("Hasta luego, espero verte pronto :)")
+        else:
+            print("El componente escrito eno es detectado. Vuelve a escribirlo")
+        menu()
+    menu()</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>📚 Glosario de Funciones</h3>
+
+                <div class="glosario-item">
+                    <h4>componentes = []</h4>
+                    <p>Nombre de los componentes de arduino.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
